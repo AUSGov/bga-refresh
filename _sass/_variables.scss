@@ -1,0 +1,82 @@
+// COLOUR VARIABLES
+
+// BGA Blues
+$blue-links: #2157AA;
+$blue-background-dark: #2E6CB9;
+$blue-background-light: #C7D9EE;
+$blue-background-extralight: #E3ECF6;
+$blue-border: #95B4DB;
+$blue-footer: #0D387B;
+
+// Highlight colours
+$blue-highlight-shadow: #708DAF;
+$blue-highlight-dark: #96B7DF;
+$blue-highlight-mid: #B3CBE8;
+$blue-highlight-light: #C8D9EE;
+
+$teal-highlight-shadow: #489595;
+$teal-highlight-dark: #5AB3B3;
+$teal-highlight-mid: #8BCACA;
+$teal-highlight-light: #BFE2E2;
+
+$green-highlight-shadow: #629D62;
+$green-highlight-dark: #85CB85;
+$green-highlight-mid: #A0D1A0;
+$green-highlight-light: #BAE1BA;
+
+$yellow-highlight-shadow: #EDC95A;
+$yellow-highlight-dark: #FFD964;
+$yellow-highlight-mid: #FFE491;
+$yellow-highlight-light: #FFF0C1;
+
+$orange-highlight-shadow: #CC7A29;
+$orange-highlight-dark: #E88A2D;
+$orange-highlight-mid: #F1B981;
+$orange-highlight-light: #F5CCA4;
+
+$purple-highlight-shadow: #7468B4;
+$purple-highlight-dark: #9183D8;
+$purple-highlight-mid: #B1A8E3;
+$purple-highlight-light: #CCC6ED;
+
+// Utility colours
+$black: #333333;
+$white: #ffffff;
+
+$blue-black-dark: #2E3E5A;
+$blue-black-mid: #788295;
+$blue-black-light: #ABB1BD;
+
+
+$red-fail-dark: #E75755;
+$red-fail-mid: #F5B5B5;
+$red-fail-light: #FCE9E9;
+
+$green-success-dark: #299F28;
+$green-success-mid: #A0D1A0;
+$green-success-light: #D4EDD4;
+
+$purple-links-visited: #933AA8;
+
+
+// FONTS
+$font-family: 'Open Sans', sans-serif;
+$font-regular: 400;
+$font-semibold: 600;
+$font-bold: 700;
+
+@mixin font-format($font, $font-weight, $font-style) {
+    font-family: $font;
+    font-weight: $font-weight;
+    font-style: $font-style;
+}
+
+$button-boxshadow: 2px 2px 3px 0px rgba(51, 51, 51, 0.2);
+
+//mixin use examples
+// @include font-format($font-family, $font-regular, normal);
+// @include font-format($font-family, $font-semibold, normal);
+// @include font-format($font-family, $font-bold, normal);
+
+
+$grid-gutter-width: 6rem !important;
