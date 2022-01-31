@@ -1,0 +1,152 @@
+// FOOTER
+footer {
+    background: $blue-links;
+    color: $white;  
+    padding: 48px 0;
+    
+    .footer-wrapper {
+        display: flex;
+    }
+    .footer-links-wrapper {
+        display: flex;
+        width: 100%;
+        border-bottom: $white 1px solid;
+        margin-bottom: 32px;
+    }
+    .footer-links {
+        width: 32%;
+        margin: 0 32px 16px 0;
+        
+        h3 {
+            color: $white;
+            padding-top: 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            
+            li {
+                display: block;
+                color: $white;
+                text-indent: 0;
+                margin: 0 0 24px 32px;
+                padding: 0;
+                
+                a {
+                    background: url(../assets/Chevron-right-white.svg) no-repeat;
+                    padding: 0 0 0 32px;
+                    text-indent: 32px;
+                    margin-left: -32px;
+                }
+            }
+        }
+    }
+    
+    .call-us-wrapper {
+        margin-bottom: 24px;
+        
+        a {
+            font-size: 26px;
+            font-weight: 600;
+        }
+    }
+    
+    .social-links-wrapper {
+        width: 100%;
+        
+        .footer-social {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            
+            li {
+                display: block;
+                width: 48px;
+                height: 48px;
+                background: $blue-footer;
+                border: solid #ffffff 3px;
+                border-radius: 50%;
+                padding: 0;
+                margin: 0 32px 0 0;
+                
+                svg {
+                    fill: $white;
+                    width: 22px;
+                    height: 100%;
+                    margin: auto;
+                    display: block;
+                    
+                    &.linkedin {
+                        margin: -2px auto 0;
+                    }
+                }
+            }
+        }
+        
+    }
+    
+    .subscribe-wrapper {
+        background: $white;
+        padding: 32px;
+        
+        color: $white;
+        
+        h3, p, a, label {
+            color: $black;
+        }
+        h3 {
+            padding-top: 0;
+        }
+        label {
+            color: $black;
+            font-weight: 600;
+            display: block;
+            margin: 0 0 8px 0;
+            
+            span {
+                color: $red-fail-dark;
+            }
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 0 0 24px 0;
+            border-radius: 0;
+            border: solid $black 1px;
+        }
+        .recaptcha {
+            margin-bottom: 24px;
+        }
+        .button-wrapper {
+            text-align: right;
+            
+            a {
+                color: $black;
+                margin-right: 16px;
+                text-decoration: underline;
+            }
+            button {
+                background: $yellow-highlight-dark;
+                border: none;
+                border-radius: 50px;
+                padding: 12px 32px;
+                border: solid 3px $yellow-highlight-shadow;
+                box-shadow: $button-boxshadow;
+            }
+        }
+    }
+}
+.indigenous-footer {
+     background: $blue-footer; 
+     padding: 48px 0;
+     color: $white;
+    
+    p {
+        color: $white;
+    }
+
+     svg {
+         width: 90%;
+         height: auto;
+     } 
+}

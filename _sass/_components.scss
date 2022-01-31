@@ -231,7 +231,7 @@
     }
 
     .hero-pathway {
-        border: solid 1px #d8d8d8;
+        border: solid 1px $blue-border;
         background: $white;
         height: 100%;
         margin-bottom: 32px;
@@ -246,6 +246,9 @@
             h2, h3 {
                 color: $blue-links;
                 padding-top: 0px;
+            }
+            p {
+                padding: 0;
             }
 
             .hero-content {
@@ -344,7 +347,6 @@
         }
 
         &.large {
-            //width: 66%;
 
             a {
                 .hero-content {
@@ -369,8 +371,12 @@
 // STANDARD PATHWAYS
 .standard-block-container {
     
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        margin-bottom: 32px;
+    }
+    
     .standard-pathway {
-        border: solid 1px #d8d8d8;
+        border: solid 1px $blue-border;
         height: 100%;
         background: $white url(../assets/arrow-circle-right-blue.png) no-repeat;
         background-position: left 32px bottom 32px;
@@ -407,9 +413,13 @@
 
 // IMAGE PATHWAYS
 .image-block-container {
+    
+    .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+        margin-bottom: 32px;
+    }
  
     .image-pathway {
-        border: solid 1px #d8d8d8;
+        border: solid 1px $blue-border;
         background: $white;
         height: 100%;
         display: block;
@@ -454,6 +464,21 @@
             } 
         }
     }
+}
+
+
+@media (max-width: 991px) {
+    .feature-pathway-container a {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        
+        .feature-content {
+            width: 100%; 
+        }
+        .feature-image {
+            width: 100%;
+        }
+    }
     
     .hero-block-container {
         .hero-pathway {
@@ -479,21 +504,8 @@
             }
         }
     }
-}
-
-
-@media (max-width: 991px) {
-    .feature-pathway-container a {
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-        
-        .feature-content {
-            width: 100%; 
-        }
-        .feature-image {
-            width: 100%;
-        }
-    }
+    
+    
 }
 
 @media (max-width: 767px) {
@@ -512,4 +524,30 @@
             }
         }
     }
+    
+    .standard-block-container {
+        .standard-pathway {
+            background-position: left 24px bottom 24px;
+            
+            a {
+                .standard-content {
+                    padding: 24px 24px 64px 24px;
+                }
+            }
+        }
+    }
+    
+    .image-block-container {
+        .image-pathway {
+            background-position: left 24px bottom 24px;
+            
+            a {
+                .image-content {
+                    padding: 24px 24px 64px 24px;
+                }
+            }
+        }
+    }
+    
+    
 }
