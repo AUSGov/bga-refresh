@@ -9,13 +9,15 @@ footer {
     }
     .footer-links-wrapper {
         display: flex;
+        flex-wrap: wrap;    
+        justify-content: space-between;
         width: 100%;
         border-bottom: $white 1px solid;
         margin-bottom: 32px;
     }
     .footer-links {
-        width: 32%;
-        margin: 0 32px 16px 0;
+        margin: 0 0 16px 0;
+        width: 31%;
         
         h3 {
             color: $white;
@@ -116,6 +118,13 @@ footer {
         }
         .recaptcha {
             margin-bottom: 24px;
+            display: flex;
+            justify-content: flex-start;
+            
+            img {
+                max-width: 304px;
+                margin: 0;
+            }
         }
         .button-wrapper {
             text-align: right;
@@ -123,6 +132,7 @@ footer {
             a {
                 color: $black;
                 margin-right: 16px;
+                font-size: 14px;
                 text-decoration: underline;
             }
             button {
@@ -147,14 +157,73 @@ footer {
 
      svg {
          width: 90%;
+         max-width: 300px;
          height: auto;
+         margin-bottom: 32px;
      } 
 }
 
-@media (max-width: 767px) {
+@media (max-width: 991px) {
     footer {
         .footer-links {
-            width: 50%;
+            margin: 0 0 16px 0;
+            width: 31%;
+            
+            ul {
+                li {
+                    margin: 0 0 16px 32px;
+                }
+            }
+        }
+        .social-links-wrapper {
+            margin-bottom: 32px;
+        }
+    }
+    .subscribe-offset {
+        margin-top: -130px;
+    }
+}
+@media (max-width: 767px) {
+     .subscribe-offset {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 575px) {
+    footer {
+        .footer-wrapper {
+            display: block;
+        }
+        .footer-links {
+            flex: 0 0 auto;
+            width: 100%;
+            margin: 0 0 16px 0;
+        }
+        .social-links-wrapper {
+            .footer-social {
+                display: block;
+                
+                li {
+                    display: inline-block;
+                    margin: 0 16px 0 0;
+                    height: 40px;
+                    width: 40px;
+                }
+            }
+        }
+        
+        .subscribe-wrapper {
+            .button-wrapper {
+                text-align: right;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column-reverse;
+                text-align: left;
+                
+                button {
+                    margin-bottom: 16px;
+                }
+            }
         }
     }
 }
