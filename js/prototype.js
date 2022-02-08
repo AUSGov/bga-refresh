@@ -1,6 +1,6 @@
 $( document ).ready(function() {
 
-// Hide empty breadcrumbs
+// HIDE EMPTY BREADCRUMBS -------------------------------------------
 $(".breadcrumb-link a").each(function(){
     var link_content = $(this).text();
     if (!link_content) {
@@ -8,6 +8,13 @@ $(".breadcrumb-link a").each(function(){
     }
  });
  
+ 
+    
+// ANCHOR MENU ------------------------------------------------------
+
+// Current section
+
+    
                         
 }); // end doc.ready
 
