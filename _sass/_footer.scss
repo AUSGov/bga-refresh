@@ -2,7 +2,7 @@
 footer {
     background: $blue-links;
     color: $white;  
-    padding: 48px 0;
+    padding: 48px 0 0 0;
     
     .footer-wrapper {
         display: flex;
@@ -150,6 +150,7 @@ footer {
      background: $blue-footer; 
      padding: 48px 0;
      color: $white;
+    margin-top: 48px;
     
     p {
         color: $white;
