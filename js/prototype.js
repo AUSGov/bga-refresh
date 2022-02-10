@@ -15,7 +15,7 @@ $(".breadcrumb-link a").each(function(){
     
 // ANCHOR MENU ------------------------------------------------------
 
-    if( $('#anchor-menu').length ) {
+if( $('#anchor-menu').length ) {
         
         console.log('Side menu present');
         var sections = {};
@@ -93,32 +93,39 @@ $(".breadcrumb-link a").each(function(){
     
 // MAIN NAVIGATION
     
-$(".nav-dropdown .link-wrapper").on("click", function () {
-
-    /*$('.nav-dropdown').each(function(){
-        $(this).removeClass('open');
-        $(this).find('ul').hide();
-    });*/
+$(".nav-dropdown").on("click", function () {
+    $(this).toggleClass('open');
     
+    var menu = $(this).attr('id');
+    var submenu ='#' + menu + '-submenu'; 
     
-    $(this).parents('.nav-dropdown').find('ul').slideToggle();
-    $(this).parents('.nav-dropdown').toggleClass('open');
+    if ($(this).hasClass('open')) {
+        $(submenu).slideDown().css('display', 'flex');
+    } else {
+        $(submenu).slideUp();
+    }
+    
     
 });
     
 // Close nav on click outside
-    
+/*    
 $(document).mouseup(function(e) {
-    var container = $('.nav-dropdown');
+    var container = $('.submenu');
+    
+    
     if (!container.is(e.target) && container.has(e.target).length === 0) {
-        container.find('ul').hide();
+        
+        container.hide();
+        
         $('.nav-dropdown').each(function(){
             $(this).removeClass('open');
         });
+        
     }
 });
 
-    
+*/  
     
     
     

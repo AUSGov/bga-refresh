@@ -93,12 +93,8 @@ header {
                 &.nav-dropdown {    
                     padding: 6px 16px 6px 16px;
                     
-                    .link-wrapper {
-                        
-                    }
-                    
                     // SUBMENUS
-                    ul {
+                    /*ul {
                         display: none;
                         position: absolute;
                         border-top: 4px solid $blue-background-light;
@@ -119,7 +115,7 @@ header {
                             position: relative;
                             border-top: none;
                         }
-                    }
+                    }*/
                 }
                 
                 &.open {
@@ -129,6 +125,62 @@ header {
                             transform: rotate(180deg);
                         }
                     
+                }
+            }
+        }
+        
+        .submenu {
+            position: absolute;
+            display: none;
+            border-top: 4px solid $blue-background-light;
+            background: $white;
+            box-shadow: $button-boxshadow;
+            width: calc(100% + 32px) !important;
+            max-width: calc(100% + 32px) !important;
+            z-index:9000;
+            top: 40px;
+            left: -16px;
+            padding: 24px 8px 8px 8px;
+
+            ul {
+                padding: 0;
+                margin: 0;
+                
+                li {
+                    background: none;
+                    padding: 0 0 16px 0;
+                    margin: 0;
+                    display: block;
+                    
+                    a {
+                        color: $blue-links;
+                        font-weight: 700;
+                        font-size: 18px;
+                        margin: 0;
+                        padding: 0;
+                        letter-spacing: 0;
+                        text-decoration: underline;   
+                    }
+                }
+                
+                &.level-2 {
+                    
+                }
+                
+                &.level-3 {
+                    li {
+                        padding: 0 0 0 20px;
+                        margin-bottom: 8px;
+                        background: url(../assets/arrow-right-blue.svg) no-repeat;
+                        background-size: 10px 10px;
+                        background-position: left 0 center;
+                        a {
+                            font-size: 15px;
+                            text-decoration: none;
+                            font-weight: 400;
+                            
+                        }
+                    }
                 }
             }
         }
