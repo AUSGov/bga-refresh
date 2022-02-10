@@ -92,7 +92,7 @@ if( $('#anchor-menu').length ) {
     
     
 // MAIN NAVIGATION
-    
+/*    
 $(".nav-dropdown").on("click", function () {
     $(this).toggleClass('open');
     
@@ -107,6 +107,7 @@ $(".nav-dropdown").on("click", function () {
     
     
 });
+*/
     
 // Close nav on click outside
 /*    
