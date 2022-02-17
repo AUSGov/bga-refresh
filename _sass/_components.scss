@@ -350,17 +350,49 @@
 
             a {
                 .hero-content {
-                    width: 50%;
+                    width: calc(50% - 32px);
+                    flex-basis: auto;
+                    flex-grow: 0;
+                    
                 }
 
                 .hero-image {
+                    width: 50%;
+                    flex-basis: auto;
+                    flex-grow: 0;
                     display: flex;
                     height: 100%;
                     
+                    
                     img {
                         object-fit: cover;
+                        
+                        
                     }
                 }
+            }
+        }
+        
+        &:focus-within {
+            border: solid 3px $blue-links;
+            border-radius: 2px;
+            background: #E6F3F3;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                }  
+            }
+        }
+        &:hover, &:active {
+            background: #E6F3F3;
+            border: solid 1px $blue-background-dark;
+            border-radius: none;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                }  
             }
         }
 
