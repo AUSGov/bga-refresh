@@ -2,8 +2,9 @@
 .feature-pathway-container  {
     
     margin-bottom: 32px;
+    background: $blue-background-dark;
+    
     a {
-        background: $blue-background-dark;
         display: flex;
         padding: 0;
         color: $white;
@@ -57,173 +58,69 @@
             }
         }
     }
+    
+    &:focus {
+        background: $blue-background-extralight;
+        border: solid 3px $blue-focus;
+        border-radius: 4px;
+        outline: none;
+         
+         a {
+             .feature-content {
+                 .feature-text {
+                     h2, h3 {
+                         color: $blue-links;
+                         text-decoration: underline;
+                         text-decoration-thickness: 1px;
+                         text-underline-offset: 2px;
+                     }
+                     p {
+                         color: $black;
+                     }
+                 }
+                 .icon-arrow {
+                     background: $blue-background-dark;
+                     
+                     svg {
+                         fill: $white;
+                     }
+                 }
+             }
+         }
+    }
+    
+    &:hover {
+        background: $blue-links;
+        border: none;
+         
+         a {
+             .feature-content {
+                .feature-text {
+                     h2, h3 {
+                         color: $white;
+                         text-decoration: underline;
+                         text-decoration-thickness: 1px;
+                         text-underline-offset: 2px;
+                     }
+                     p {
+                         color: $white;
+                     }
+                 }
+                .icon-arrow {
+                    background: $white;
+
+                    svg {
+                        fill: $blue-black-dark;
+                    }
+                }
+             }
+         }
+    }
+
+
 }
 
 // HERO PATHWAYS
-/*
-.hero-block-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-        .hero-pathway {
-            border: solid 1px #d8d8d8;
-            background: $white;
-            //box-shadow: 2px 2px 4px 0px #D8D8D8;
-            margin: 0 0 32px 0;
-            width: 32%;
-
-            a {
-                display: flex;
-                height: 100%;
-                padding: 0;
-                cursor: pointer;
-                border-left: solid 16px $yellow-highlight-dark;
-                
-                h3 {
-                    color: $blue-links;
-                    font-size: 24px;
-                }
-
-                .hero-content {
-                    margin: 31px;
-                    width: 100%;
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-content: space-between;
-
-                    .icon-arrow {
-                        width: 48px;
-                        height: 48px;
-                        background: $yellow-highlight-mid;
-                        border-radius: 50px;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                    }
-                }
-
-                .hero-image {
-                    display: none;
-                }
-            }
- 
-            &.yellow {
-                a {
-                    border-left: solid 16px $yellow-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $yellow-highlight-dark;
-                        }
-                    }
-                }
-            }
-            
-            &.blue {
-                a {
-                    border-left: solid 16px $blue-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $blue-highlight-mid;
-                        }
-                    }
-                }
-            }
-            
-            &.teal {
-                a {
-                    border-left: solid 16px $teal-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $teal-highlight-mid;
-                        }
-                    }
-                }
-            }
-            
-            &.green {
-                a {
-                    border-left: solid 16px $green-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $green-highlight-mid;
-                        }
-                    }
-                }
-            } 
-  
-            &.purple {
-                a {
-                    border-left: solid 16px $purple-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $purple-highlight-mid;
-                        }
-                    }
-                }
-            }
-            
-            &.orange {
-                a {
-                    border-left: solid 16px $orange-highlight-dark;
-                    
-                    .hero-content {
-                        .icon-arrow {
-                            background: $orange-highlight-mid;
-                        }
-                    }
-                }
-            }
-           
-            &.large {
-                width: 66%;
-                
-                a {
-                    .hero-content {
-                        width: 50%;
-                    }
-                    .hero-image {
-                        display: flex;
-                    }
-                }
-                
-                &.yellow {
-                    background: $yellow-highlight-light;
-                    background: linear-gradient(90deg, rgba(255,240,193,1) 0%, rgba(255,232,160,1) 84%);
-                }
-                
-                &.blue {
-                    background: $blue-highlight-light;
-                }
-                       
-                &.teal {
-                    background: $teal-highlight-light;
-                    background: linear-gradient(90deg, rgba(225,242,242,1) 0%, rgba(197,233,233,1) 84%);
-                }
-                
-                &.green {
-                    background: $green-highlight-light;
-                }
-                
-                &.orange {
-                    background: $orange-highlight-light;
-                }
-                
-                &.purple {
-                    background: $purple-highlight-light;
-                }   
-            }
-                
-        }
-    
-    }
-*/
-
 .hero-block-container {
 
     .col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
@@ -373,14 +270,16 @@
             }
         }
         
-        &:focus-within {
-            border: solid 3px $blue-links;
+        &:focus {
+            border: solid 3px $blue-focus;
             border-radius: 2px;
             background: #E6F3F3;
             
             a {
                 h2, h3 {
                     text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
                 }  
             }
         }
@@ -392,6 +291,8 @@
             a {
                 h2, h3 {
                     text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
                 }  
             }
         }
@@ -439,6 +340,34 @@
                 display: none;
             }
         }
+        
+        &:focus {
+            border: solid 3px $blue-focus;
+            background-color: $blue-background-extralight;
+            outline: 0;
+            border-radius: 4px;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                }
+            }
+        }
+        &:hover {
+            border: none;
+            background-color: $blue-background-extralight;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                }
+            }
+        }
+        
     }
 }
 
@@ -476,6 +405,33 @@
                 display: flex;
                 flex-wrap: wrap;
                 align-content: space-between;
+            }
+        }
+        
+        &:focus {
+            border: solid 3px $blue-focus;
+            background-color: $blue-background-extralight;
+            outline: 0;
+            border-radius: 4px;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                }
+            }
+        }
+        &:hover {
+            border: none;
+            background-color: $blue-background-extralight;
+            
+            a {
+                h2, h3 {
+                    text-decoration: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 2px;
+                }
             }
         }
     }

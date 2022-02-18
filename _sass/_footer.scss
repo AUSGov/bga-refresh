@@ -3,7 +3,6 @@ footer {
     background: $blue-links;
     color: $white;  
     padding: 48px 0 0 0;
-    
     .footer-wrapper {
         display: flex;
     }
@@ -36,9 +35,23 @@ footer {
                 
                 a {
                     background: url(../assets/Chevron-right-white.svg) no-repeat;
+                    background-position: left 0 top 3px;
                     padding: 0 0 0 32px;
-                    text-indent: 32px;
+                    text-indent: 0;
                     margin-left: -32px;
+                    display: block;
+                    
+                    &:focus {
+                        border: 2px solid $white;
+                        border-radius: 4px;
+                        outline: none;
+                        text-decoration: underline;
+                    }
+                    &:hover {
+                        border: none;
+                        text-decoration: underline !important;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -50,6 +63,22 @@ footer {
         a {
             font-size: 26px;
             font-weight: 600;
+            
+            &:focus {
+                border: 2px solid $white;
+                border-radius: 4px;
+                outline: none;
+                text-decoration: underline;
+                text-decoration-thickness: 1px;
+                text-underline-offset: 2px;
+            }
+            &:hover {
+                border: none;
+                text-decoration: underline !important;
+                cursor: pointer;
+                text-decoration-thickness: 1px !important;
+                text-underline-offset: 2px !important;
+            }
         }
     }
     
@@ -81,6 +110,27 @@ footer {
                     &.linkedin {
                         margin: -2px auto 0;
                     }
+                }
+                
+                &:focus {
+                    border: 3px solid $white;
+                    background: $white;
+                    outline: none;
+                    
+                    svg {
+                        fill: $blue-links;
+                    }
+                }
+
+                &:hover {
+                    border: solid #ffffff 3px;
+                    cursor: pointer;
+                    background: $white;
+                    
+                    svg {
+                        fill: $blue-links;
+                    }
+                    
                 }
             }
         }
@@ -115,6 +165,12 @@ footer {
             margin: 0 0 24px 0;
             border-radius: 0;
             border: solid $black 1px;
+            
+            &:focus {
+                border: solid $blue-focus 3px;
+                border-radius: 4px;
+                outline: none;
+            }
         }
         .recaptcha {
             margin-bottom: 24px;
@@ -134,6 +190,19 @@ footer {
                 margin-right: 16px;
                 font-size: 14px;
                 text-decoration: underline;
+                
+                &:focus {
+                    color: $black;
+                    border: solid $blue-focus 2px;
+                    text-decoration: underline;
+                    border-radius: 4px;
+                    outline: none;
+                }
+                &:hover {
+                    color: $black;
+                    cursor: pointer;
+                    text-decoration: underline;
+                }
             }
             button {
                 background: $yellow-highlight-dark;
@@ -142,6 +211,16 @@ footer {
                 padding: 12px 32px;
                 border: solid 3px $yellow-highlight-shadow;
                 box-shadow: $button-boxshadow;
+                
+                &:focus {
+                    background: $yellow-links-background;
+                    border: solid 3px $blue-focus;
+                    outline: none;
+                }
+                &:hover {
+                    background: $yellow-links-background;
+                    border: solid 3px $yellow-links-background;
+                }
             }
         }
     }

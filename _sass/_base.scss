@@ -134,24 +134,21 @@ img {
         font-weight: 600;
         color: $blue-links;
         text-decoration: underline;
-        text-decoration-thickness: 2px;
+        text-decoration-thickness: 1px;
         text-underline-offset: 2px;
         box-shadow: none;
         
         &:visited {
             color: $purple-links-visited;
-            border-bottom: 1px solid $blue-links;
         }
         &:focus {
             background: $blue-background-extralight;
-            border: solid 2px blue-links;
+            border: solid 2px $blue-focus;
             border-radius: 4px;
+            outline: 0;
         }
         &:hover {
             background: $blue-background-extralight;
-        }
-        &:active {
-            
         }
     }
     
@@ -198,7 +195,6 @@ img {
                     color: $blue-links;
                     display: block;
                     text-decoration: none;
-                    border-bottom: none;
                     background: none;
                     margin: 0;
                     padding: 0;
@@ -207,11 +203,12 @@ img {
                     line-height: 20px;
                     
                     &:focus {
-                        
+                        border: solid 2px $blue-focus;
+                        border-radius: 4px; 
                     }
                     &:hover {
                         text-decoration: underline;
-                        text-decoration-thickness: 2px;
+                        text-decoration-thickness: 1px;
                         text-underline-offset: 2px;
                         font-weight: 600;
                     }
@@ -251,7 +248,7 @@ img {
         .description {
             color: $blue-links;
             text-decoration: underline;
-            text-decoration-thickness: 2px;
+            text-decoration-thickness: 1px;
             text-underline-offset: 2px;
             padding: 0;
             display: inline;
@@ -287,20 +284,19 @@ img {
         &.yellow {
             background: $yellow-highlight-light;
             border-left: 8px solid $yellow-highlight-dark;
+            
+            a {
+                &:hover {
+                    background: $white;
+                }
+                &:focus {
+                    background: $white;
+                    border: 2px solid $blue-focus;
+                    outline: 0;
+                }
+            }
         }
-        /*&.orange {
-            background: $orange-highlight-light;
-            border-left: 8px solid $orange-highlight-dark;
-        }
-        &.purple {
-            background: $purple-highlight-light;
-            border-left: 8px solid $purple-highlight-dark;
-        }
-        &.green {
-            background: $green-highlight-light;
-            border-left: 8px solid $green-highlight-dark;
-        }
-        */
+
     }
 
 }
