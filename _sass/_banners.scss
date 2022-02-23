@@ -1,6 +1,7 @@
 // HOME BANNER
 .banner-background {
     background: $blue-background-light;
+    background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
     padding: 0 0 32px 0;
     margin-bottom: 48px;
     position: relative;
@@ -147,10 +148,16 @@
 .category-banner-background {
     padding: 0;
     background: $blue-background-light;
+    background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
     margin-bottom: 48px;
+    
+    .container {
+        padding-top: 32px;
+    }
 }
+
 #category-banner {
-    background: #b8cde7;
+    background: $blue-background-light;
     
     .banner-content {
         padding: 40px 32px 64px;
@@ -187,6 +194,7 @@
 .topic-banner-background {
     padding: 40px 0 64px;
     background: $blue-background-light;
+    background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
     margin-bottom: 48px;
     
     .banner-content { 
