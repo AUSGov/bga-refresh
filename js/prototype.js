@@ -92,22 +92,35 @@ if( $('#anchor-menu').length ) {
     
     
 // MAIN NAVIGATION
-/*    
-$(".nav-dropdown").on("click", function () {
-    $(this).toggleClass('open');
-    
-    var menu = $(this).attr('id');
-    var submenu ='#' + menu + '-submenu'; 
-    
-    if ($(this).hasClass('open')) {
-        $(submenu).slideDown().css('display', 'flex');
+
+var toggleClass = function(clicked_elem, elems, elem_class){
+     
+    if ( $(clicked_elem).hasClass(elem_class) ) {
+        
+        $(elems).each(function(){
+            $(this).removeClass(elem_class);
+        });
+        
     } else {
-        $(submenu).slideUp();
+        $(elems).each(function(){
+            $(this).removeClass(elem_class);
+        });
+        $(clicked_elem).addClass(elem_class);
     }
+};
     
-    
+ 
+$(".level-1").on("click", function () {
+    console.log('level 1 clicked');
+    toggleClass($(this), $('.level-1'), 'open');
 });
-*/
+    
+$(".level-2").on("click", function () {
+    console.log('level 2 clicked');
+    toggleClass($(this), $('.level-1 > .level-2'), 'open');
+});
+
+
     
 // Close nav on click outside
 /*    

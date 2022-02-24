@@ -1,17 +1,17 @@
 // HEADER
 header {
     padding: 32px 0 24px;
-    
-    
+
+
     #header-strap {
         justify-content: space-between;
         margin-bottom: 32px;
-        
+
         .bga-logo {
             .mobile-logo {
                 display: none;
             }
-            
+
             svg {
                 &:focus {
                     border: solid 3px $blue-focus;
@@ -22,7 +22,7 @@ header {
                 }
             }
         }
-
+        
         .search-container {
             display: flex;
             justify-content: flex-end;
@@ -33,7 +33,7 @@ header {
                 border-right: 0px;
                 min-width: 220px;
                 padding: 0 16px;
-                
+
                 &:focus {
                     border: solid 3px $blue-focus;
                     border-radius: 4px;
@@ -51,28 +51,27 @@ header {
                 border-bottom-right-radius: 4px;
                 background: url(../assets/icon-search-white.svg) $blue-background-dark no-repeat;
                 background-position: center center;
-                
+
                 &:focus {
                     border: solid 3px $blue-focus;
                     background: url(../assets/icon-search-blue.svg) $blue-background-light no-repeat;
                     background-position: center center;
                 }
+
                 &:hover {
                     background: url(../assets/icon-search-white.svg) $blue-links no-repeat;
                     background-position: center center;
                 }
             }
         }
+
         .mobile-nav {
             display: none;
         }
 
     }
-    
-    .nav-container {
-        
-    }
-     
+
+
     #nav {
         padding: 0;
         margin: 0;
@@ -83,6 +82,7 @@ header {
             padding: 0;
             display: block;
 
+            /* LEVEL 1 */
             li {
                 display: inline-block;
                 padding: 6px 8px;
@@ -95,16 +95,17 @@ header {
                 margin: 0;
                 letter-spacing: 0;
                 text-decoration: none;
-                
-                
+
+
                 &:hover {
                     background-color: $blue-background-light;
                 }
+
                 &:focus {
                     background-color: $blue-background-light;
                     border: 2px solid $blue-focus;
                 }
-                
+
                 a {
                     display: inline-block;
                     color: $blue-links;
@@ -115,116 +116,157 @@ header {
                     letter-spacing: 0;
                     text-decoration: none;
                 }
-                
-                &.nav-dropdown {    
+
+                &.nav-dropdown {
                     padding: 6px 28px 6px 8px;
                     background-image: url(../assets/Chevron-down-blue.svg);
                     background-repeat: no-repeat;
                     background-position: right 8px center;
-                    
-                    // SUBMENUS
-                    /*ul {
-                        display: none;
-                        position: absolute;
-                        border-top: 4px solid $blue-background-light;
-                        background: $white;
-                        box-shadow: $button-boxshadow;
-                        width: calc(100% + 32px);
-                        z-index:9000;
-                        top: 40px;
-                        left: -16px;
-                        padding: 32px;
-                        
-                        li {
-                            background: none;
-                            padding: 0 0 16px 0;
-                        }  
-                        
-                        ul {
-                            position: relative;
-                            border-top: none;
-                        }
-                    }*/
-                }
-                
-                &.open {
-                    background-color: $blue-background-light;         
+                    position: relative;
                 }
             }
-        }
-        
-        .submenu {
-            position: absolute;
-            display: none;
-            border-top: 4px solid $blue-background-light;
-            background: $white;
-            box-shadow: $button-boxshadow;
-            width: calc(100% + 32px) !important;
-            max-width: calc(100% + 32px) !important;
-            z-index:9000;
-            top: 40px;
-            left: -16px;
-            padding: 24px 8px 8px 8px;
+            
+                            /* HIDE SUB LEVELS BY DEFAULT */
+                ul {
+                    display: none;
+                }
 
-            ul {
-                padding: 0;
-                margin: 0;
-                
-                li {
-                    background: none;
-                    padding: 0 0 16px 0;
-                    margin: 0;
-                    display: block;
-                    
-                    a {
-                        color: $blue-links;
-                        font-weight: 700;
-                        font-size: 18px;
-                        margin: 0;
-                        padding: 0;
-                        letter-spacing: 0;
-                        text-decoration: underline;   
-                    }
-                }
-                
-                &.level-2 {
-                    
-                }
-                
-                &.level-3 {
-                    li {
-                        padding: 0 0 0 20px;
-                        margin-bottom: 8px;
-                        background: url(../assets/arrow-right-blue.svg) no-repeat;
-                        background-size: 10px 10px;
-                        background-position: left 0 center;
-                        a {
-                            font-size: 15px;
-                            text-decoration: none;
-                            font-weight: 400;
-                            
+
+                &.open {
+                    background-color: $blue-background-light;
+                    border-bottom-left-radius: 0;
+                    border-bottom-right-radius: 0;
+
+                    /* SHOW LEVEL 2 */
+                    &.nav-dropdown {
+                        background-image: url(../assets/Chevron-up-blue.svg);
+                        ul {
+                            display: block;
+                            position: absolute;
+                            background: $white;
+                            box-shadow: $button-boxshadow;
+                            min-width: 282px;
+                            z-index: 9000;
+                            top: 40px;
+                            left: 0px;
+                            padding: 0;
+
+                            li {
+                                background: $blue-background-light;
+                                padding: 8px 44px 8px 16px;
+                                display: block;
+                                border-radius: 0;
+                                border-bottom: $white solid 2px;
+
+                                &:focus {
+                                    border: solid 3px $blue-focus;
+                                    background: $blue-links;
+
+                                    a {
+                                        color: $white;
+                                    }
+                                }
+
+                                &:hover {
+                                    background: $blue-links;
+
+                                    a {
+                                        color: $white;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    border-bottom: none;
+                                }
+
+                                /* LEVEL 3 */
+                                &.nav-dropdown {
+                                    background: url(../assets/arrow-right-blue.svg) no-repeat $blue-background-light;
+                                    background-size: 12px 12px;
+                                    background-position: right 16px center;
+                                    position: relative;
+
+                                    &:focus {
+                                        border: solid 3px $blue-focus;
+                                        background: $blue-links;
+
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+
+                                    &:hover {
+                                        background: $blue-links url(../assets/arrow-right-white.svg) no-repeat;
+                                        background-size: 12px 12px;
+                                        background-position: right 16px center;
+
+                                        a {
+                                            color: $white;
+                                        }
+                                    }
+
+                                    ul {
+                                        display: none;
+                                    }
+                                    &.open {
+                                        
+                                        ul {
+                                            display: block;
+                                            position: absolute;
+                                            top: 0;
+                                            left: 100%;
+                                        }
+
+                                            li {
+                                                background: $blue-links;
+
+                                                a {
+                                                    color: $white;
+                                                }
+
+                                                &:focus {
+                                                    border: solid 3px $blue-focus;
+                                                    background: $blue-footer;
+                                                }
+
+                                                &:hover {
+                                                    background: $blue-footer;
+                                                }
+                                            }
+                                        }
+                                }
+                            }
+
+                            ul {
+                                position: relative;
+                                border-top: none;
+                            }
                         }
                     }
+
                 }
-            }
         }
+
 
     }
 }
+
 @media (max-width: 1199px) {
     header {
         #nav {
             .nav {
-                li, li.nav-dropdown {
+
+                li,
+                li.nav-dropdown {
                     font-size: 15px;
                     line-height: 20px;
-                    
+
                     a {
                         font-size: 15px;
                     }
-                    
+
                 }
-            }    
+            }
         }
     }
 }
@@ -234,21 +276,21 @@ header {
         #nav {
             ul.nav {
                 display: flex;
-                
-                li { 
+
+                li {
                     flex-grow: 0;
                     flex-basis: 0;
                     margin-right: 6px;
-                    
+
                     span {
                         white-space: nowrap;
                     }
-                    
+
                     &.nav-dropdown {
                         background-position: right 8px top 12px;
                     }
                 }
-            }    
+            }
         }
     }
 }
@@ -256,16 +298,18 @@ header {
 @media (max-width: 767px) {
     header {
         padding: 24px 0;
+
         #header-strap {
             margin-bottom: 0;
-            
+
             .bga-logo {
                 display: flex;
                 align-items: center;
-                
+
                 svg {
                     display: none;
                 }
+
                 .mobile-logo {
                     display: block;
                     color: $blue-links;
@@ -276,20 +320,24 @@ header {
                     text-decoration: none;
                 }
             }
+
             .header-search {
                 display: flex;
                 justify-content: flex-end;
             }
+
             .search-container {
                 input {
                     display: none;
                 }
+
                 button {
                     border-radius: 0;
                     border-top-left-radius: 6px;
                     border-bottom-left-radius: 6px;
                 }
             }
+
             .mobile-nav {
                 display: block;
                 text-indent: -9999px;
@@ -303,7 +351,7 @@ header {
                 background-position: center center;
             }
         }
-        
+
         #nav {
             display: none;
         }
@@ -315,7 +363,7 @@ header {
 #breadcrumbs {
     background: $blue-background-dark;
     padding: 8px 0;
-    
+
     .breadcrumbs-wrapper {
         ul {
             margin: 0;
@@ -328,13 +376,15 @@ header {
                 background: url(../assets/Chevron-right-white.svg) no-repeat;
                 background-size: 16px 10px;
                 background-position: right 2px center;
-                
-                a, p {
+
+                a,
+                p {
                     color: $white;
                     margin: 0;
                     padding: 0;
                     font-size: 14px;
                 }
+
                 a {
                     &:focus {
                         border: $white solid 2px;
@@ -342,14 +392,15 @@ header {
                         outline: none;
                     }
                 }
+
                 &.hidden {
-                    display: none;  
+                    display: none;
                 }
+
                 &.breadcrumb-current {
                     background: none;
                 }
-            }  
+            }
         }
-    } 
+    }
 }
-
