@@ -153,15 +153,17 @@
     
     .container {
         padding-top: 32px;
+        //padding: 32px 16px 0 16px;
     }
 }
 
 #category-banner {
     background: $blue-background-light;
+    width: calc(100% + 64px);
+    margin-left: -32px;
     
     .banner-content {
-        padding: 40px 32px 64px;
-        
+        padding: 32px 32px 64px;
         width: 100%;
 
         p.lead {
@@ -176,7 +178,7 @@
     .banner-image {
         position: relative;
         float: left;
-        margin: 0;
+        margin: 0 0 0 8px;
         
         height: 350px;
         
@@ -191,7 +193,7 @@
 }
 
 // TOPIC AND INFORMATION PAGE BANNERS
-.topic-banner-background {
+/*.topic-banner-background {
     padding: 40px 0 64px;
     background: $blue-background-light;
     background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
@@ -214,7 +216,7 @@
         }
     }
     
-}
+}*/
 
 
 // MEDIA QUERIES
@@ -313,9 +315,11 @@
     
     #category-banner {
         background: none;
+        width: 100%;
+        margin-left: 0;
         
         .banner-content {
-            padding: 32px 0 48px;
+            padding: 0 0 48px;
             
             p.lead {
                 font-size: 16px;
@@ -326,7 +330,7 @@
         }
     }
     
-    .topic-banner-background {
+    /*.topic-banner-background {
         padding: 32px 0 48px;
         
         .banner-content { 
@@ -337,7 +341,7 @@
         }
     }
     
-    }
+    }*/
 }
 
 @media (max-width:575px) {
