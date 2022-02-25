@@ -11,7 +11,15 @@ $(".search-container input").on('focus', function() {
 $(".search-container input").on('focusout', function() {
     $(this).removeClass('in-focus');
 });
+ 
+// Mobile search
+$('.mobile-search').on('click', function(){
+    $('#nav').slideUp();
+    $('.mobile-nav').removeClass('open');
     
+    $('#mobile-search').slideToggle();
+    $(this).toggleClass('open');
+});
     
    
     
@@ -61,6 +69,30 @@ $(document).mouseup(function(e) {
             $(this).removeClass('open');
         });
         
+        if ($(window).width() < 575) {
+            console.log('mobile');
+        }
+        
+    }
+    
+    
+});
+    
+    
+// Mobile navigation
+$('.mobile-nav').on('click', function(){
+    $('#mobile-search').slideUp();
+    $('.mobile-search').removeClass('open');
+    
+    $('#nav').slideToggle();
+    $(this).toggleClass('open');
+});
+
+$(window).resize(function(){
+    if ( $(window).width() >= 767 ) {
+        console.log('fat');
+        $('#mobile-search').hide();
+        $('.mobile-search').removeClass('open');
     }
 });
     

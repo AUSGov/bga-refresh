@@ -21,6 +21,10 @@ header {
                 }
             }
         }
+        .mobile-buttons-wrapper {
+                display: none;
+            }
+        
         
         .search-container {
             display: flex;
@@ -36,7 +40,6 @@ header {
                 
                 &.in-focus {
                     width: calc(100% - 56px);
-                    //transition: width 6s;
                 }
 
                 &:focus {
@@ -76,7 +79,10 @@ header {
 
     }
 
-
+    #mobile-search {
+        display: none;
+    }
+    
     #nav {
         padding: 0;
         margin: 0;
@@ -166,6 +172,7 @@ header {
                             top: 40px;
                             left: 0px;
                             padding: 0;
+                            border-left: solid 4px $blue-links;
 
                             li {
                                 background: $blue-background-light;
@@ -328,6 +335,7 @@ header {
                 
                 li.open.nav-dropdown.level-1 + ul {
                     top: 34px;
+                    border-left: solid 4px $blue-links;
                     
                     &.left-aligned {
                         left: auto;
@@ -347,6 +355,10 @@ header {
 
 @media (max-width: 991px) {
     header {
+        
+        #header-strap {
+            
+        }
         #nav {
             ul.nav {
                 display: flex;
@@ -416,36 +428,200 @@ header {
             .header-search {
                 display: flex;
                 justify-content: flex-end;
-            }
-
-            .search-container {
-                input {
+                
+                .search-container {
                     display: none;
                 }
+            }
 
+            .mobile-buttons-wrapper {
+                display: block;
+                width: 100%;
+                text-align: right;
+            }
+            .mobile-search {
+                display: inline-block;
+                button {
+                    border-radius: 0;
+                    border: none;
+                    border-top-left-radius: 6px;
+                    border-bottom-left-radius: 6px;
+                    text-indent: -9999px;
+                    height: 48px;
+                    width: 56px;
+                    background: url(../assets/icon-search-white.svg) $blue-background-dark no-repeat;
+                    background-position: center center;
+                }
+                &.open {
+                    button {
+                        background: url(../assets/icon-close.svg) $blue-background-light no-repeat;
+                        background-position: center center;
+                        border: none;
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                    }
+                }
+            }
+            .mobile-nav {
+                display: inline-block;
+                
+                button {
+                    text-indent: -9999px;
+                    height: 48px;
+                    width: 56px;
+                    border: none;
+                    border-top-right-radius: 6px;
+                    border-bottom-right-radius: 6px;
+                    background: url(../assets/icon-menu.svg) $blue-background-dark no-repeat;
+                    background-position: center center;
+                }
+                
+                &.open {
+                    button {
+                        background: url(../assets/icon-close.svg) $blue-background-light no-repeat;
+                        background-position: center center;
+                        border: none;
+                        border-bottom-left-radius: 0px;
+                        border-bottom-right-radius: 0px;
+                    }
+                }
+            }
+        }
+
+        #mobile-search {
+            .mobile-search-container {
+                display: flex;
+                background: $blue-background-light;
+                padding: 24px;
+
+                input {
+                    height: 48px;
+                    border: solid $black 1px;
+                    border-right: 0px;
+                    width: calc(100% - 56px);
+                    padding: 0 16px;
+                
+                }   
                 button {
                     border-radius: 0;
                     border-top-left-radius: 6px;
                     border-bottom-left-radius: 6px;
+                    text-indent: -9999px;
+                    height: 48px;
+                    width: 56px;
+                    border: none;
+                    border-radius: 0;
+                    border-top-right-radius: 4px;
+                    border-bottom-right-radius: 4px;
+                    background: url(../assets/icon-search-white.svg) $blue-background-dark no-repeat;
+                    background-position: center center;
+
                 }
             }
-
-            .mobile-nav {
-                display: block;
-                text-indent: -9999px;
-                height: 48px;
-                width: 56px;
-                border: $blue-links solid 1px;
-                border-top-right-radius: 6px;
-                border-bottom-right-radius: 6px;
-                margin-left: 2px;
-                background: url(../assets/icon-menu.svg) $blue-background-dark no-repeat;
-                background-position: center center;
-            }
+            
         }
-
         #nav {
             display: none;
+            
+            background: $blue-background-light;
+            
+            //LEVEL 1
+            ul.nav {
+                display: block;
+                width: 100%;
+                margin: 0;
+                
+                .submenu-wrapper, li {
+                    display: block;
+                    width: 100%;
+                    padding: 0;
+                }
+                li, li:hover, li:active {
+                    background: $blue-background-light;
+                    border: none;
+                    border-radius: 0;
+                    border-bottom: $white solid 1px;
+                    
+                    &:last-of-type {
+                       border-bottom: $white solid 1px; 
+                    }
+                    
+                    &.level-1 {
+                        padding: 12px 16px; 
+                        
+                        &.nav-dropdown {
+                            padding: 12px 16px;
+                            background-size: 14px 9px;
+                            background-position: right 16px center;
+                        }
+   
+                    }
+                }
+                
+                // LEVEL 2
+                li.open.nav-dropdown.level-1 + ul {
+                    position: relative;
+                    top: auto;
+                    width: 100%;
+                    border-left: none;
+                    
+                    &.left-aligned {
+                        right: auto;
+                    }
+                    
+                    li.level-2 {
+                        background: $blue-links;
+                        padding: 12px 16px;
+                        border-bottom: $white solid 1px;
+                    
+                        &:last-of-type {
+                           border-bottom: $white solid 1px; 
+                        }
+                        
+                        &.nav-dropdown, &.nav-dropdown:hover {
+                            background: url(../assets/Chevron-down-white.svg) no-repeat $blue-links;
+                            background-position: right 16px center;
+                            padding: 12px 16px;
+                        }
+                        a {
+                            color: $white;
+                        }
+                    }
+                    
+                }
+                
+                // LEVEL 3
+                li.open.nav-dropdown.level-1 + ul li.nav-dropdown.level-2.open {
+                    
+                    border-bottom: $white solid 1px;         
+                    background: $blue-links url(../assets/chevron-up-white.svg) no-repeat;
+                    background-size: 14px 9px;
+                    background-position: right 16px center;
+                    
+                    &:last-of-type {
+                       border-bottom: $white solid 1px; 
+                    }
+                    
+                    
+                    + ul {     
+                        position: relative;
+                        width: 100%;
+                        margin: 0;
+                        padding: 0;
+                        left: auto;
+
+                        li.level-3, li.level-3:hover {
+                            background: $blue-footer;
+                            border-bottom: $white solid 1px;
+                            padding: 12px 16px;
+
+                            &:last-of-type {
+                               border-bottom: $white solid 1px; 
+                            }
+                        }  
+                    }
+                }
+            }
         }
     }
 }
