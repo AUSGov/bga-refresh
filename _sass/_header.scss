@@ -2,7 +2,6 @@
 header {
     padding: 32px 0 24px;
 
-
     #header-strap {
         justify-content: space-between;
         margin-bottom: 32px;
@@ -31,8 +30,14 @@ header {
                 height: 48px;
                 border: solid $black 1px;
                 border-right: 0px;
-                min-width: 220px;
+                width: 220px;
                 padding: 0 16px;
+                transition: width 0.6s;
+                
+                &.in-focus {
+                    width: calc(100% - 56px);
+                    //transition: width 6s;
+                }
 
                 &:focus {
                     border: solid 3px $blue-focus;
@@ -78,9 +83,20 @@ header {
         position: relative;
 
         .nav {
-            margin: 0 0 0 0;
+            margin: 0 0 0 -8px;
             padding: 0;
             display: block;
+            width: calc(100% + 16px);
+            
+            .submenu-wrapper {
+                display: inline-block;
+                position: relative
+            }
+            
+            /* HIDE SUB LEVELS BY DEFAULT */
+            ul {
+                display: none;
+            }
 
             /* LEVEL 1 */
             li {
@@ -99,11 +115,15 @@ header {
 
                 &:hover {
                     background-color: $blue-background-light;
+                    border: none;
                 }
 
                 &:focus {
                     background-color: $blue-background-light;
                     border: 2px solid $blue-focus;
+                }
+                &:active {
+                    border: none;
                 }
 
                 a {
@@ -117,7 +137,7 @@ header {
                     text-decoration: none;
                 }
 
-                &.nav-dropdown {
+                &.nav-dropdown.level-1 {
                     padding: 6px 28px 6px 8px;
                     background-image: url(../assets/Chevron-down-blue.svg);
                     background-repeat: no-repeat;
@@ -126,21 +146,17 @@ header {
                 }
             }
             
-                            /* HIDE SUB LEVELS BY DEFAULT */
-                ul {
-                    display: none;
-                }
-
-
-                &.open {
+            li.open {
                     background-color: $blue-background-light;
                     border-bottom-left-radius: 0;
                     border-bottom-right-radius: 0;
+                    border: none;
 
-                    /* SHOW LEVEL 2 */
-                    &.nav-dropdown {
+                    &.nav-dropdown.level-1 {
                         background-image: url(../assets/Chevron-up-blue.svg);
-                        ul {
+                        
+                        /* SHOW LEVEL 2 */
+                        + ul {
                             display: block;
                             position: absolute;
                             background: $white;
@@ -159,7 +175,9 @@ header {
                                 border-bottom: $white solid 2px;
 
                                 &:focus {
-                                    border: solid 3px $blue-focus;
+                                    border: none;
+                                    border-bottom: solid 2px $white;
+                                    outline: none;
                                     background: $blue-links;
 
                                     a {
@@ -169,26 +187,37 @@ header {
 
                                 &:hover {
                                     background: $blue-links;
+                                    border: none;
+                                    border-bottom: $white solid 2px;
 
                                     a {
                                         color: $white;
                                     }
                                 }
+                                &:active {
+                                    border: none;
+                                    border-bottom: $white solid 2px;
+                                }
 
                                 &:last-of-type {
                                     border-bottom: none;
+                                    
                                 }
 
-                                /* LEVEL 3 */
-                                &.nav-dropdown {
+                                
+                                &.nav-dropdown.level-2 {
                                     background: url(../assets/arrow-right-blue.svg) no-repeat $blue-background-light;
                                     background-size: 12px 12px;
                                     background-position: right 16px center;
                                     position: relative;
 
                                     &:focus {
-                                        border: solid 3px $blue-focus;
-                                        background: $blue-links;
+                                        border: none;
+                                        border-bottom: solid 2px $white;
+                                        outline: none;
+                                        background: $blue-links url(../assets/arrow-right-white.svg) no-repeat;
+                                        background-size: 12px 12px;
+                                        background-position: right 16px center;
 
                                         a {
                                             color: $white;
@@ -199,6 +228,8 @@ header {
                                         background: $blue-links url(../assets/arrow-right-white.svg) no-repeat;
                                         background-size: 12px 12px;
                                         background-position: right 16px center;
+                                        border: none;
+                                        border-bottom: solid 2px $white;
 
                                         a {
                                             color: $white;
@@ -208,45 +239,60 @@ header {
                                     ul {
                                         display: none;
                                     }
+                                    
                                     &.open {
+                                        background: $blue-links url(../assets/arrow-right-white.svg) no-repeat;
+                                        background-size: 12px 12px;
+                                        background-position: right 16px center;
+                                        border: none;
+                                        border-bottom: $white solid 2px;
                                         
-                                        ul {
+                                        a {
+                                            color: $white;
+                                        }
+                                        
+                                        /* LEVEL 3 */
+                                        + ul {
                                             display: block;
                                             position: absolute;
-                                            top: 0;
                                             left: 100%;
-                                        }
-
-                                            li {
+                                            margin-top: -44px;
+                                            
+                                            li.level-3 {
                                                 background: $blue-links;
+                                                min-width: 282px;
 
                                                 a {
                                                     color: $white;
                                                 }
 
                                                 &:focus {
-                                                    border: solid 3px $blue-focus;
+                                                    border: none;
+                                                    border-bottom: $white solid 2px;
                                                     background: $blue-footer;
+                                                    outline: none;
                                                 }
 
                                                 &:hover {
-                                                    background: $blue-footer;
+                                                    background: $blue-footer;  
+                                                    border: none;
+                                                    border-bottom: $white solid 2px;
                                                 }
-                                            }
-                                        }
-                                }
-                            }
+                                                &:active {
+                                                        border: none;
+                                                        border-bottom: $white solid 2px;
+                                                }
 
-                            ul {
-                                position: relative;
-                                border-top: none;
+                                            }
+                                        }                                            
+                                    }
+                                }
+                                
                             }
                         }
                     }
-
                 }
         }
-
 
     }
 }
@@ -255,7 +301,7 @@ header {
     header {
         #nav {
             .nav {
-
+                
                 li,
                 li.nav-dropdown {
                     font-size: 15px;
@@ -264,10 +310,38 @@ header {
                     a {
                         font-size: 15px;
                     }
+                    
 
                 }
+                li.level-1 {
+                    padding: 6px 8px;
+                    
+                    &.nav-dropdown {
+                        padding: 6px 28px 6px 6px;
+                        background-position: right 6px center;
+                    }
+                    
+                    a {
+                        padding: 0;
+                    }
+                }
+                
+                li.open.nav-dropdown.level-1 + ul {
+                    top: 34px;
+                    
+                    &.left-aligned {
+                        left: auto;
+                        right: calc(100% - 74px);
+                    }
+                }
+                li.open.nav-dropdown.level-1 + ul li.nav-dropdown.level-2.open + ul {
+                    margin-top: -41px;
+                }
+                
+                
             }
         }
+        
     }
 }
 
@@ -277,6 +351,11 @@ header {
             ul.nav {
                 display: flex;
 
+                .submenu-wrapper {
+                    flex-grow: 0;
+                    flex-basis: 0;
+                }
+                
                 li {
                     flex-grow: 0;
                     flex-basis: 0;
@@ -286,8 +365,21 @@ header {
                         white-space: nowrap;
                     }
 
+                    
+                }
+                li.level-1 {
+                    height: 100%;
+                    
                     &.nav-dropdown {
-                        background-position: right 8px top 12px;
+                        background-position: right 4px top 12px;
+                    }
+                }
+                
+                li.open.nav-dropdown.level-1 + ul {
+                    top: 59px;
+                    
+                    li {
+                        margin: 0;
                     }
                 }
             }

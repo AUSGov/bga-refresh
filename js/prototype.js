@@ -3,6 +3,69 @@
 
 $( document ).ready(function() {
 
+// SEARCH INPUT
+$(".search-container input").on('focus', function() {
+    $(this).addClass('in-focus');
+});
+    
+$(".search-container input").on('focusout', function() {
+    $(this).removeClass('in-focus');
+});
+    
+    
+   
+    
+// MAIN NAVIGATION
+
+var toggleClass = function(clicked_elem, elems, elem_class){
+     
+    if ( $(clicked_elem).hasClass(elem_class) ) {
+        
+        $(elems).each(function(){
+            $(this).removeClass(elem_class);
+        });
+        
+    } else {
+        $(elems).each(function(){
+            $(this).removeClass(elem_class);
+        });
+        $(clicked_elem).addClass(elem_class);
+    }
+};  
+ 
+$(".level-1").on("click", function () { 
+    toggleClass($(this), $('.level-1'), 'open');
+    
+    $('.level-2').each(function(){
+        $(this).removeClass('open');
+    });
+});
+    
+$(".level-2").on("click", function () {
+    toggleClass($(this), $('.level-2'), 'open');
+});
+
+    
+// Close nav on click outside  
+$(document).mouseup(function(e) {
+    
+    var container = $('.nav');
+    
+    
+    if (!container.is(e.target) && container.has(e.target).length === 0) {
+        
+        $('.nav-dropdown').each(function(){
+            $(this).removeClass('open');
+        });
+        $('.level-1').each(function(){
+            $(this).removeClass('open');
+        });
+        
+    }
+});
+    
+
+    
 // HIDE EMPTY BREADCRUMBS -------------------------------------------
 $(".breadcrumb-link a").each(function(){
     var link_content = $(this).text();
@@ -12,6 +75,7 @@ $(".breadcrumb-link a").each(function(){
  });
  
  
+
     
 // ANCHOR MENU ------------------------------------------------------
 
@@ -89,59 +153,7 @@ if( $('#anchor-menu').length ) {
 
     }
 
-    
-    
-// MAIN NAVIGATION
 
-var toggleClass = function(clicked_elem, elems, elem_class){
-     
-    if ( $(clicked_elem).hasClass(elem_class) ) {
-        
-        $(elems).each(function(){
-            $(this).removeClass(elem_class);
-        });
-        
-    } else {
-        $(elems).each(function(){
-            $(this).removeClass(elem_class);
-        });
-        $(clicked_elem).addClass(elem_class);
-    }
-};
-    
- 
-$(".level-1").on("click", function () {
-    console.log('level 1 clicked');
-    toggleClass($(this), $('.level-1'), 'open');
-});
-    
-$(".level-2").on("click", function () {
-    console.log('level 2 clicked');
-    toggleClass($(this), $('.level-1 > .level-2'), 'open');
-});
-
-
-    
-// Close nav on click outside
-/*    
-$(document).mouseup(function(e) {
-    var container = $('.submenu');
-    
-    
-    if (!container.is(e.target) && container.has(e.target).length === 0) {
-        
-        container.hide();
-        
-        $('.nav-dropdown').each(function(){
-            $(this).removeClass('open');
-        });
-        
-    }
-});
-
-*/  
-    
-    
     
                         
 }); // end doc.ready
