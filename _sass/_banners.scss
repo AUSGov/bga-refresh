@@ -149,7 +149,7 @@
     padding: 0;
     background: $blue-background-light;
     background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     
     .container {
         padding-top: 32px;
@@ -158,8 +158,6 @@
 
 #category-banner {
     background: $blue-background-light;
-    //width: calc(100% + 64px);
-    //margin-left: -32px;
     
     .banner-content {
         padding: 32px 32px 64px;

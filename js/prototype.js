@@ -90,7 +90,6 @@ $('.mobile-nav').on('click', function(){
 
 $(window).resize(function(){
     if ( $(window).width() >= 767 ) {
-        console.log('fat');
         $('#mobile-search').hide();
         $('.mobile-search').removeClass('open');
     }

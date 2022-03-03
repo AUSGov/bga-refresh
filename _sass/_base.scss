@@ -22,7 +22,7 @@ h2 {
     color: $blue-black-dark;
 }
 h3 {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 600;
     margin: 0;
     padding: 32px 0 24px 0;
@@ -73,6 +73,47 @@ img {
 }
 
 
+button.primary-button {
+    background: $yellow-highlight-dark;
+    border-radius: 50px;
+    padding: 0 32px;
+    height: 54px;
+    border: solid 3px $yellow-highlight-shadow;
+    box-shadow: $button-boxshadow;
+
+    &:focus {
+        background: $yellow-links-background;
+        border: solid 3px $blue-focus;
+        outline: none;
+    }
+    &:hover {
+        background: $yellow-links-background;
+        border: solid 3px $yellow-links-background;
+    }
+}
+
+button.secondary-button {
+    background: $white;
+    border-radius: 50px;
+    padding: 0 32px;
+    height: 54px;
+    border: solid 3px $blue-links;
+    box-shadow: $button-boxshadow;
+
+    &:focus {
+        background: $blue-links;
+        border: solid 3px $blue-links;
+        color: $white;
+        outline: none;
+    }
+    &:hover {
+        background: $blue-background-dark;
+        border: solid 3px $blue-background-dark;
+        color: $white;
+    }
+}
+
+
 // GRID OVER RIDES
 @media (max-width: 1200px) {
     .container, .container-md, .container-sm {
@@ -119,21 +160,23 @@ img {
 }
 .main-content {
     
-    margin-bottom: 48px;
-    h1, h2, h3, h4, h5, h6 {
-        &:first-child {
-            padding-top: 0;
-        }
+    //margin: 32px 0;
+    
+    > *:last-child {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+    > *:first-child {
+        padding-top: 0;
+        margin-top: 0;
     }
 }
 
 
 // BODY CONTENT
 
-#body-copy {
-    
-
-    
+.body-copy {
+  
     a {
         font-weight: 600;
         color: $blue-links;
@@ -154,6 +197,9 @@ img {
         &:hover {
             background: $blue-background-extralight;
         }
+    }
+    a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        color: $blue-links;
     }
     
     ul {
@@ -228,81 +274,12 @@ img {
             position: fixed;
             top: 32px;
         }
+        > *:first-child {
+            padding-top: 0;
+            margin-top: 0;
+        }
     }
-    
-    .inline-pathway-block {
-        margin-bottom: 24px
-    }
-    .inline-pathway {
-        background: $blue-background-extralight;
-        padding: 32px;
-        border-left: 8px solid $blue-highlight-light;
-        margin: 0;
-
-        a {
-            text-decoration: none;
-            text-decoration-thickness: 0;
-            text-underline-offset: 0;
-            
-            &:hover {
-                background: none;
-            }
-        }
-
-        .description {
-            color: $blue-links;
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 2px;
-            padding: 0;
-            display: inline;
-            font-weight: 600;
-        }
-
-        .destination {
-            padding: 0 0 0 32px;
-            margin: 24px 0 0 0;
-            text-transform: uppercase;
-            font-weight: 400;
-            font-size: 12px;
-            background: url(../assets/icon-external.svg) no-repeat;
-            background-position: left center;
-        }
-
-        &:focus {
-            border: solid 3px $blue-links;
-            border-radius: 4px;
-        }
-
-        &:hover {
-            background: $blue-highlight-light;
-            border-left: 8px solid $blue-highlight-dark;
-        }
-    }  
-    .call-out {
-        background: $blue-black-light;
-        border-left: 8px solid $blue-black-mid;
-        padding: 32px;
-        margin: 16px 0 24px 0;
-        
-        &.yellow {
-            background: $yellow-highlight-light;
-            border-left: 8px solid $yellow-highlight-dark;
-            
-            a {
-                &:hover {
-                    background: $white;
-                }
-                &:focus {
-                    background: $white;
-                    border: 2px solid $blue-focus;
-                    outline: 0;
-                }
-            }
-        }
-
-    }
-
+      
 }
 
 
@@ -315,9 +292,7 @@ img {
     h2 {
         font-size: 28px;
     }
-    h3 {
-        font-size: 24px;
-    }
+   
 }
 
 
