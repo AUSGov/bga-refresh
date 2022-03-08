@@ -199,7 +199,12 @@ button.secondary-button {
         }
     }
     a:not([href]):not([class]), a:not([href]):not([class]):hover {
+        font-weight: 600;
         color: $blue-links;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        box-shadow: none;
     }
     
     ul {

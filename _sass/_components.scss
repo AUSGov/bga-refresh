@@ -566,27 +566,29 @@
     padding: 32px 0px 48px 0px;
     
     .block-quote {
-        border-left: solid 8px $blue-border;
+        border-left: solid 8px $purple-highlight-dark;
         padding-left: 24px;
         display: flex;
         
         svg {
             width: 28px;
-            margin-right: 16px;
+            margin: 8px 16px 0 0 ;
+            fill: $purple-highlight-mid;
+            flex-shrink: 0;
         }
-        
         .quote {      
             font-size: 22px;
             line-height: 33px;
             font-style: italic;
+            padding-bottom: 16px
         }
         .quote-source {
             font-size: 14px;
             line-height: 21px;
-            padding: 0;
+            padding: 0 0 8px;
         }
     }
-}
+} 
 
 
 
@@ -684,18 +686,19 @@
         }
     }
     
-    /*
-    .image-block-container {
-        .image-pathway {
-            background-position: left 24px bottom 24px;
+}
+
+@media (max-width:575px) {
+    .block-quote-container {
+        padding: 24px 0px 32px 0px;
+
+        .block-quote {
+            padding-left: 16px;
             
-            a {
-                .image-content {
-                    padding: 24px 24px 64px 24px;
-                }
+            .quote {
+                font-size: 18px;
+                line-height: 27px;
             }
         }
     }
-    
-    */
 }
