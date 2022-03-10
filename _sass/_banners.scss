@@ -3,7 +3,7 @@
     background: $blue-background-light;
     background: linear-gradient(0deg, rgba(184,205,231,1) 0%, rgba(156,182,219,1) 100%);
     padding: 0 0 32px 0;
-    margin-bottom: 48px;
+    margin-bottom: 32px;
     position: relative;
 }
 .spacer {
@@ -46,7 +46,9 @@
 }
 
 #alert {
+    margin-bottom: 16px;
     background: $white;
+    
     a.alert-container {
         display: flex;
         text-decoration: none;

@@ -46,6 +46,7 @@ $white: #ffffff;
 $blue-black-dark: #2E3E5A;
 $blue-black-mid: #788295;
 $blue-black-light: #ABB1BD;
+$blue-black-lightest: #E4E6EA;
 
 
 $red-fail-dark: #D2201E;
@@ -80,6 +81,3 @@ $button-boxshadow: 2px 2px 3px 0px rgba(51, 51, 51, 0.2);
 // @include font-format($font-family, $font-regular, normal);
 // @include font-format($font-family, $font-semibold, normal);
 // @include font-format($font-family, $font-bold, normal);
-
-
-$grid-gutter-width: 6rem !important;

@@ -113,6 +113,76 @@ button.secondary-button {
     }
 }
 
+button.chat {
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    height: 54px;
+    padding: 0 67px 0 32px;
+    display: flex;
+    align-items: center;
+    z-index: 9000;
+    border-radius: 60px;
+    box-shadow: $button-boxshadow;
+    
+    span {
+        font-size: 16px;
+        line-height: 26px;
+    }
+    
+    &.open {
+        background: url(../assets/icon-chat-open.svg) #ACFF98 no-repeat;
+        background-position: right 32px center;
+        border: solid #348621 3px;
+    }
+    &.closed {
+        background: url(../assets/icon-chat-closed.svg) $blue-black-lightest no-repeat;
+        border: solid $blue-black-light 3px;
+        background-position: right 32px center;
+    }
+}
+.chat-closed-msg {
+    display: none;
+    position: fixed;
+    z-index: 9000;
+    right: 24px;
+    bottom: 90px;
+    width: 100%;
+    max-width: 300px;
+    background: white;
+    padding: 24px;
+    border: 3px solid $blue-black-light;
+    border-radius: 4px;
+    box-shadow: $button-boxshadow;
+    
+    .msg-container {  
+        > *:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        > *:first-child {
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+    span.arrow {
+        background-color: $white;
+        border-bottom: 3px solid $blue-black-light;
+        border-right: 3px solid $blue-black-light;
+        bottom: -16px;
+        height: 16px;
+        width: 16px;
+        position: absolute;
+        bottom: -18px;
+        right: 2rem;
+        transform: translate(-50%, -50%) rotate(45deg);
+        z-index: 900;
+    }
+    
+    &.show {
+            display: block;
+    }
+}
 
 // GRID OVER RIDES
 @media (max-width: 1200px) {
@@ -135,33 +205,13 @@ button.secondary-button {
 
 
 //PAGE SECTIONS
-#recommended, #popular {
-    margin: 0 0 48px 0;
-}
 .section-background {
     background: $blue-background-light;
-    padding: 48px 0;
-    margin-bottom: 48px;
-    
-    h2, h3 {
-        &:first-child {
-            padding-top: 0;
-        }
-    }
-}
-#news {
-    margin-bottom: 48px;
-    
-    h2, h3 {
-        &:first-child {
-            padding-top: 0;
-        }
-    }
+    padding: 16px 0;
+    margin: 32px 0;
+
 }
 .main-content {
-    
-    //margin: 32px 0;
-    
     > *:last-child {
         padding-bottom: 0;
         margin-bottom: 0;
@@ -284,18 +334,47 @@ button.secondary-button {
             margin-top: 0;
         }
     }
-      
+    
+    &.no-side-menu {
+        padding: 0 12px 0 44px;
+    }
+
 }
 
 
 // MEDIA QUERIES
 @media (max-width: 767px) {
+    
+    button.chat {
+        text-indent: -9999px;
+        height: 58px;
+        width: 58px;
+        padding: 0;
+        
+        &.open, &.closed {
+            background-position: center center;
+        }  
+    }
+    .chat-closed-msg {
+        &.show {
+            background: url(../assets/icon-close.svg) no-repeat $white;
+            background-position: right 8px top 8px;
+
+        }
+    }
+    
     h1 {
         font-size: 32px;
         
     }
     h2 {
         font-size: 28px;
+    }
+    
+    .body-copy {
+        &.no-side-menu {
+            padding: 0 12px;
+        }
     }
    
 }
