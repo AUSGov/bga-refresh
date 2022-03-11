@@ -97,13 +97,18 @@ $(window).resize(function(){
     
 
     
-// HIDE EMPTY BREADCRUMBS -------------------------------------------
+// BREADCRUMBS ------------------------------------------------------
+
+// Hide empty breadcrumbs
 $(".breadcrumb-link a").each(function(){
     var link_content = $(this).text();
     if (!link_content) {
-        $(this).parent(".breadcrumb-link").addClass('hidden');
+        $(this).parent(".breadcrumb-link").remove();
     }
  });
+
+// Add class for mobile view
+$('li.breadcrumb-link').last().addClass('mobile-breadcrumb');
  
  
 
@@ -117,14 +122,14 @@ if( $('#anchor-menu').length ) {
         $('#anchor-menu li').each(function(){
             var anchor_link = $(this).find('a').attr('href');
             var section_position = $(anchor_link).position();
-            sections[anchor_link] = Math.round(section_position.top);
+            sections[anchor_link] = Math.round(section_position.top) - 16;
         });
 
         // Stickiness
         var make_sticky = function () {
 
-            var menu_position = Math.round($('#body-copy .col-sm-3').position().top);
-            var menu_width = $('#body-copy .col-sm-3').width();
+            var menu_position = Math.round($('.body-copy .col-sm-3').position().top);
+            var menu_width = $('.body-copy .col-sm-3').width();
             var menu_height = $('.side-menu').height();
             var footer_height = $('footer').height();
             var unfix = $(document).height() - footer_height - menu_height;
