@@ -209,6 +209,9 @@ header {
                                 &:last-of-type {
                                     border-bottom: none;
                                     
+                                    &:hover, &:active {
+                                        border-bottom: none !important;
+                                    }
                                 }
 
                                 
@@ -264,6 +267,8 @@ header {
                                             position: absolute;
                                             left: 100%;
                                             margin-top: -44px;
+                                            box-shadow: $button-boxshadow;
+                                            padding-bottom: 0;
                                             
                                             li.level-3 {
                                                 background: $blue-links;
@@ -476,7 +481,7 @@ header {
                     margin: 0;
                     padding: 0;
                     font-weight: 700;
-                    font-size: 18px;
+                    font-size: 20px;
                     text-decoration: none;
                 }
             }
