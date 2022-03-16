@@ -191,7 +191,7 @@
 
         &.yellow {
             a {
-                border-left: solid 16px $yellow-highlight-dark;
+                border-left-color: $yellow-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -203,7 +203,7 @@
 
         &.blue {
             a {
-                border-left: solid 16px $blue-highlight-dark;
+                border-left-color: $blue-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -215,7 +215,7 @@
 
         &.teal {
             a {
-                border-left: solid 16px $teal-highlight-dark;
+               border-left-color: $teal-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -227,7 +227,7 @@
 
         &.green {
             a {
-                border-left: solid 16px $green-highlight-dark;
+                border-left-color: $green-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -239,7 +239,7 @@
 
         &.purple {
             a {
-                border-left: solid 16px $purple-highlight-dark;
+                border-left-color: $purple-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -251,7 +251,7 @@
 
         &.orange {
             a {
-                border-left: solid 16px $orange-highlight-dark;
+                border-left-color: $orange-highlight-dark;
 
                 .hero-content {
                     .icon-arrow {
@@ -621,6 +621,10 @@
 
     .hero-block-container {
         .hero-pathway {
+            
+            a {
+                border-left-width: 8px;
+            }
             
             .hero-image {
                 display: none;

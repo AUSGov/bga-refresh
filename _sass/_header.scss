@@ -514,6 +514,8 @@ header {
                     background-position: center center;
                 }
                 &.open {
+                    margin-bottom: 1px;
+                    
                     button {
                         background: url(../assets/icon-close.svg) $blue-background-light no-repeat;
                         background-position: center center;
@@ -538,6 +540,8 @@ header {
                 }
                 
                 &.open {
+                    margin-bottom: 1px;
+                    
                     button {
                         background: url(../assets/icon-close.svg) $blue-background-light no-repeat;
                         background-position: center center;
