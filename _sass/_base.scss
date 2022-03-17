@@ -371,6 +371,13 @@ button.chat {
         font-size: 28px;
     }
     
+    button.primary-button {
+        padding: 0 24px;
+        height: 48px;
+        font-size: 14px;
+    }
+
+    
     .body-copy {
         &.no-side-menu {
             padding: 0 12px;
