@@ -653,16 +653,12 @@
 
 @media (max-width: 767px) {
     .feature-pathway-container a {
-        .feature-content {
-            padding: 24px;
-        }
-    }
-    .feature-pathway-container a {
         flex-wrap: wrap;
         flex-direction: column-reverse;
         
         .feature-content {
-            width: 100%; 
+            width: 100%;
+            padding: 24px;
         }
         .feature-image {
             width: 100%;
@@ -685,7 +681,7 @@
             
             a {
                 .standard-content {
-                    padding: 24px 24px 64px 24px;
+                    padding: 24px 24px 80px 24px;
                 }
             }
         }
