@@ -183,6 +183,28 @@
                     }
                 }
             }
+            .external-link {
+                display: flex;
+                align-items: center;
+                background: $yellow-highlight-light;
+                border-radius: 50px;
+                padding-right: 24px;
+                
+                .icon-arrow {
+                    flex-shrink: 0;
+                }
+                
+                .external-site {
+                    flerx-shrink: 1;
+                    
+                    p {
+                        padding: 4px 0 4px 8px;
+                        font-size: 14px;
+                        line-height: 18px;
+                        font-weight: 600;
+                    }
+                }
+            }
 
             .hero-image {
                 display: none;
@@ -197,6 +219,9 @@
                     .icon-arrow {
                         background: $yellow-highlight-dark;
                     }
+                    .external-link {
+                        background: $yellow-highlight-light;
+                    }
                 }
             }
         }
@@ -208,6 +233,9 @@
                 .hero-content {
                     .icon-arrow {
                         background: $blue-highlight-mid;
+                    }
+                    .external-link {
+                        background: $blue-background-extralight;
                     }
                 }
             }
@@ -221,6 +249,9 @@
                     .icon-arrow {
                         background: $teal-highlight-mid;
                     }
+                    .external-link {
+                        background: $teal-highlight-light;
+                    }
                 }
             }
         }
@@ -232,6 +263,9 @@
                 .hero-content {
                     .icon-arrow {
                         background: $green-highlight-mid;
+                    }
+                    .external-link {
+                        background: $green-highlight-light;
                     }
                 }
             }
@@ -245,6 +279,9 @@
                     .icon-arrow {
                         background: $purple-highlight-mid;
                     }
+                    .external-link {
+                        background: $purple-highlight-light;
+                    }
                 }
             }
         }
@@ -256,6 +293,9 @@
                 .hero-content {
                     .icon-arrow {
                         background: $orange-highlight-mid;
+                    }
+                    .external-link {
+                        background: $orange-highlight-light;
                     }
                 }
             }
@@ -296,7 +336,12 @@
                     text-decoration: underline;
                     text-decoration-thickness: 1px;
                     text-underline-offset: 2px;
-                }  
+                } 
+                .hero-content {
+                    .external-link {
+                        background: $white;
+                    }
+                }
             }
         }
         &:hover, &:active {
@@ -309,7 +354,12 @@
                     text-decoration: underline;
                     text-decoration-thickness: 1px;
                     text-underline-offset: 2px;
-                }  
+                }
+                .hero-content {
+                    .external-link {
+                        background: $white;
+                    }
+                }
             }
         }
 
