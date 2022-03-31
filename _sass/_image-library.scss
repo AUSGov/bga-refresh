@@ -1,0 +1,50 @@
+.image-library-block {
+    .col-12, col-sm-6 {
+        margin-bottom: 32px;
+    }
+    
+    .image-group {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border:solid 1px $blue-border;
+        padding: 0;
+        height: 100%;
+        
+    }
+    .original-image {
+        background: #EDEEF1;
+        width: 33%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: space-between;
+        
+        .title {
+            width: 100%;
+            padding: 24px;
+        }
+        .image-wrapper {
+            padding: 16px;
+        }
+       
+    }
+    .library-image {
+        width: 66%;
+        
+        .title {
+            width: 100%;
+            padding: 24px;
+        }
+        
+        img {
+            height: 100%; 
+            object-fit: cover;
+        }
+         
+    }
+    p {
+        padding: 0;
+    }
+    
+  
+}
