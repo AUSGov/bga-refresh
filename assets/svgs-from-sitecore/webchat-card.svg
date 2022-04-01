@@ -4,7 +4,7 @@
 
     <g > 
 
-        <g class="illustration-secondary"> 
+        <g class="illustration-secondary" fill="#B3CBE8"> 
 
             <path class="cls-1" d="M51.6,59.36S30.43,65,33.11,44.37c-3.49-16.63,7-18.5,7-18.5L35.71,8.72l-27-2C2.9,6.76,3,13.45,3,13.45v92.86c0,6.32,4.29,5.88,4.29,5.88l60.86-1Z" /> 
 
@@ -20,7 +20,7 @@
 
     <g > 
 
-        <g class="illustration-primary"> 
+        <g class="illustration-primary" fill="#2157AA"> 
 
             <path class="cls-2" d="M149.33,13.67H10.52A1.5,1.5,0,0,0,9,15.17V94.11a1.5,1.5,0,0,0,1.5,1.5H149.33a1.5,1.5,0,0,0,1.5-1.5V15.17A1.51,1.51,0,0,0,149.33,13.67Zm-1.5,78.94H12V16.67H147.83Z" /> 
 

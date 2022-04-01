@@ -4,7 +4,7 @@
 
     <g> 
 
-        <g class="illustration-shape"> 
+        <g class="illustration-shape" fill="#C8D9EE"> 
 
             <circle class="cls-1" cx="80" cy="80" r="73.25" /> 
 
@@ -14,7 +14,7 @@
 
     <g> 
 
-        <g class="illustration-secondary"> 
+        <g class="illustration-secondary" fill="#B3CBE8"> 
 
             <path class="cls-2" d="M50,10.23c7.53,3.63,16.76-9-.13-3.84,0,0-2.5-3.6-2.05-1.33L45.66,8.5C39.25,11.37,50.13,9.74,50,10.23Z" /> 
 
@@ -28,7 +28,7 @@
 
     <g> 
 
-        <g class="illustration-primary"> 
+        <g class="illustration-primary" fill="#2157AA"> 
 
             <path class="cls-3" d="M77.16,95.92H73.73L65.3,82.27h-.09l.05.76c.11,1.46.17,2.79.17,4v8.9H62.89V78.79h3.39l8.41,13.58h.07c0-.18-.05-.83-.1-2s-.07-2-.07-2.64v-9h2.57Z" /> 
 
