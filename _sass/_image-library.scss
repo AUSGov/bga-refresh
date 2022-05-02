@@ -19,6 +19,10 @@
         flex-wrap: wrap;
         align-content: space-between;
         
+        &.new {
+            background: $red-fail-mid;
+        }
+        
         .title {
             width: 100%;
             padding: 24px;
